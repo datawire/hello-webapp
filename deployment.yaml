@@ -35,7 +35,7 @@ spec:
       name: hello-webapp
     spec:
       containers:
-      - image: registry.hub.docker.com/richarddli/hello-webapp:f85db5bc73b5ff2325c96ea7c6e58c0dd24180ad.ephemeral
+      - image: IMAGE_URL
         imagePullPolicy: IfNotPresent
         name: hello-webapp
         resources:
