@@ -30,7 +30,7 @@ spec:
     - protocol: {{service.protocol or 'TCP'}}
       port: {{service.port or '80'}}
       targetPort: {{service.targetPort or '8080'}}
-  type: LoadBalancer
+  type: NodePort
 
 ---
 apiVersion: extensions/v1beta1
