@@ -13,7 +13,7 @@ def elapsed():
     return "%d:%02d:%02d" % (hours, minutes, seconds)
 
 def update():
-    r = requests.post('www.google-analytics.com/collect',
+    r = requests.post('http://www.google-analytics.com/collect',
                       data = {'v': 1,
                               'tid': 'UA-57322503-11',
                               'cid': '666',
