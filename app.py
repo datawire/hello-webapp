@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-import time, requests
+import time, requests, os
 from flask import Flask
 app = Flask(__name__)
 
@@ -13,13 +13,18 @@ def elapsed():
     return "%d:%02d:%02d" % (hours, minutes, seconds)
 
 def update():
+    if "KUBERNETES_SERVICE_HOST" in os.environ:
+        ea = 'step5'
+    else:
+        ea = 'step2'
+
     r = requests.post('http://www.google-analytics.com/collect',
                       data = {'v': 1,
                               'tid': 'UA-57322503-11',
                               'cid': '666',
                               't': 'event',
                               'ec': 'tutorial',
-                              'ea': 'start'
+                              'ea': ea
                               })
 
 @app.route('/')
