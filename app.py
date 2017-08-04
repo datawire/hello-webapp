@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-import time, requests, os, uuid
+import time, requests, os
 from flask import Flask
 app = Flask(__name__)
 
